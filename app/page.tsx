@@ -3,30 +3,42 @@
 import { FormEvent, useEffect, useState } from "react";
 
 const projects = [
-  { number: "01", title: "Not Just Whipped Cream", summary: "E-commerce dessert shop — product design, WordPress development and a conversion-focused brand system.", tags: ["WordPress", "WooCommerce", "SEO"], className: "cream", eyebrow: "E-commerce / 2025" },
-  { number: "02", title: "KEEPR", summary: "A privacy-first password vault and personal life OS, designed around clarity, encryption and calm daily use.", tags: ["Laravel", "React", "Security"], className: "keepr", eyebrow: "Full-stack / In progress" },
-  { number: "03", title: "Haven for Paws", summary: "Pet adoption and identification platform using computer vision to help lost animals find their way home.", tags: ["Python", "EfficientNet", "PostgreSQL"], className: "paws", eyebrow: "AI platform / 2025" },
-  { number: "04", title: "FieldOps Console", summary: "A focused operations dashboard that turns high-volume requests into clear, trackable workflows for teams.", tags: ["Laravel", "Tailwind", "Analytics"], className: "fieldops", eyebrow: "Operations / 2024" },
+  { number: "01", title: "Ebik Device Repair", summary: "A responsive service website that helps students request laptop and phone repairs through a clear, approachable booking experience.", tags: ["Responsive Web", "Service UX", "Deployment"], className: "cream", eyebrow: "Service platform / Live", href: "https://ebik.vercel.app/" },
+  { number: "02", title: "SmartWarm", summary: "An IoT-based warm-up game system combining interactive LED challenges with a simple interface for engaging group activities.", tags: ["IoT", "Arduino", "Interactive UI"], className: "keepr", eyebrow: "Final year project / Live", href: "https://smartwarm.site/" },
+  { number: "03", title: "Piex Jury Platform", summary: "A jury management platform designed around participant flow, efficient scoring workflows and transparent results for live events.", tags: ["PHP", "SQL", "Scoring UX"], className: "paws", eyebrow: "Event platform / Live", href: "https://spexpmj.infinityfreeapp.com/index.php" },
+  { number: "04", title: "IDS + IPS Monitor", summary: "A network-security dashboard in development for real-time intrusion visibility, alert triage and coordinated threat response.", tags: ["Cybersecurity", "Monitoring", "In progress"], className: "fieldops", eyebrow: "Security system / In progress", href: "#contact" },
+  { number: "05", title: "Donexa", summary: "A streamer-donation concept that lets supporters attach videos or images to create more memorable, interactive livestream moments.", tags: ["Product Design", "Media", "In progress"], className: "cream", eyebrow: "Creator platform / In progress", href: "#contact" },
 ];
 
 const experience = [
-  ["Apr 2024 — Present", "WordPress Developer & SEO Specialist", "Freelance", "Australia · Remote"],
-  ["Sept 2023 — Jun 2025", "IT Specialist", "One Clique Studio", "San Juan City, Philippines"],
-  ["Apr 2023 — Aug 2023", "Marketing Analyst", "JG Superstore", "San Juan City, Philippines"],
-  ["Jan 2023 — Jun 2023", "Content Associate", "JG Superstore", "San Juan City, Philippines"],
-  ["Aug 2022 — Jan 2023", "Technical Support Representative", "Independent", "Manila, Philippines"],
+  ["Jan 2024 - Jan 2026", "IT Technician", "AJ Technology", "Johor Bahru"],
+  ["Apr 2022 - Mar 2023", "Junior Engineer", "Kyocera", "Johor Bahru"],
+  ["May 2021 - Apr 2022", "Store Management Trainee", "Original Classic", "Johor Bahru"],
+  ["Jun 2020 - May 2021", "Store Management Trainee", "Gatti (M) Sdn. Bhd.", "Johor Bahru"],
 ];
 
-const technologies = ["Laravel", "WordPress", "React", "TypeScript", "JavaScript", "Tailwind CSS", "PHP", "Python", "PostgreSQL", "MySQL", "Supabase", "Figma", "GitHub", "SEO"];
-const certifications = [
-  ["Apr 2026", "The GiveHER Effect: Powering AI and Robotics", "DEVCON Philippines"],
-  ["Mar 2026", "Gen AI to Z: A Career Summit in an AI-Driven World", "Vibe Coders PH"],
+const technologies = ["HTML", "CSS", "JavaScript", "PHP", "SQL", "C/C++", "Java", "Python", "React", "Node.js", "Firebase", "Arduino", "IoT", "Git", "GitHub", "Visual Studio Code", "NetBeans", "VMware", "Cisco", "Figma", "Canva"];
+
+const achievements = [
+  ["2026", "Best Overall Project - SPEX", "Politeknik Mersing · Gold, Faculty of Information Technology"],
+  ["2026", "Best Software Development Project - PIEX", "Faculty of Information Technology · Best overall project"],
+  ["2025", "Top 9 Finalist - PPKOMP", "International-level competition"],
+  ["2025", "Silver Award - Data Hackathon", "National-level competition"],
+  ["2022", "Gold Award - Innotech", "National-level competition"],
+  ["Leadership", "Chairperson of PPJTMK", "Student Association, Information & Communication Technology Department"],
+  ["Leadership", "Secretary of JPP", "Student Representative Committee, Kolej Komuniti"],
+];
+
+const credentials = [
+  ["Credential", "CompTIA Data+", "Verified professional certification", "/pdf/comptia-data-plus.pdf"],
+  ["Academic", "Academic Transcript", "Official academic record and course results", "/pdf/academic-transcript.pdf"],
+  ["Profile", "Professional Resume", "Experience, education, skills and achievements", "/pdf/alsa-resume.pdf"],
 ];
 
 function ThemeButton() {
   const [dark, setDark] = useState(false);
   useEffect(() => {
-    const saved = localStorage.getItem("rbl-theme");
+    const saved = localStorage.getItem("alsa-theme");
     const next = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
     setDark(next);
     document.documentElement.dataset.theme = next ? "dark" : "light";
@@ -35,7 +47,7 @@ function ThemeButton() {
     const next = !dark;
     setDark(next);
     document.documentElement.dataset.theme = next ? "dark" : "light";
-    localStorage.setItem("rbl-theme", next ? "dark" : "light");
+    localStorage.setItem("alsa-theme", next ? "dark" : "light");
   }
   return <button className="icon-button theme-button" type="button" onClick={toggleTheme} aria-label={`Switch to ${dark ? "light" : "dark"} mode`}><span className="theme-icon" aria-hidden="true" /></button>;
 }
@@ -53,7 +65,7 @@ function ChatPanel({ onClose }: { onClose: () => void }) {
     const form = new FormData(event.currentTarget);
     const name = String(form.get("name") || "A portfolio visitor");
     const message = String(form.get("message") || "I'd like to work together.");
-    window.location.href = `mailto:rblenon18@gmail.com?subject=${encodeURIComponent(`Portfolio enquiry from ${name}`)}&body=${encodeURIComponent(message)}`;
+    window.location.href = `mailto:alsanudinnnn@gmail.com?subject=${encodeURIComponent(`Portfolio enquiry from ${name}`)}&body=${encodeURIComponent(message)}`;
   }
   return <section className="chat-panel" role="dialog" aria-modal="false" aria-labelledby="chat-title">
     <div className="chat-head"><div><span className="eyebrow">Start a conversation</span><h2 id="chat-title">What can I build for you?</h2></div><button className="icon-button close-button" type="button" onClick={onClose} aria-label="Close contact panel">×</button></div>
@@ -74,42 +86,35 @@ export default function Home() {
   return <>
     <a className="skip-link" href="#main">Skip to content</a>
     <header className="site-header">
-      <a className="brand" href="#top" aria-label="RBL home">RBL<span>.</span></a>
+      <a className="brand" href="#top" aria-label="Alsa home">ALSA<span>.</span></a>
       <nav aria-label="Primary navigation"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
       <ThemeButton />
     </header>
     <main id="main">
       <section className="hero section-shell" id="top">
-        <div className="hero-profile"><div className="portrait" aria-label="Renielyn Lenon monogram portrait" role="img"><span>RL</span><i className="portrait-line one" /><i className="portrait-line two" /><i className="portrait-line three" /></div><div><p className="profile-name">Renielyn Lenon <span className="verified" aria-label="Verified">✓</span></p><div className="profile-links" aria-label="Contact links"><a href="mailto:rblenon18@gmail.com">Email</a><a href="#contact">Let&apos;s talk</a></div></div></div>
-        <div className="hero-copy"><p className="hero-kicker">Independent developer · Manila / Remote</p><h1>Freelance Web Developer <span>— Laravel & WordPress</span></h1><p className="hero-description">I build thoughtful websites and dependable backend systems for ambitious teams. My work connects clean interfaces with Laravel, WordPress, PostgreSQL and practical SEO—currently expanding into computer vision and LLM-powered products.</p><div className="hero-actions"><a className="button button-dark" href="#experience">View resume <span aria-hidden="true">→</span></a><a className="text-link" href="#projects">Explore selected work <span aria-hidden="true">↓</span></a></div></div>
-        <p className="hero-index" aria-hidden="true">01 / 06</p>
+        <div className="hero-profile"><div className="portrait" aria-label="Alsa monogram portrait" role="img"><span>AZ</span><i className="portrait-line one" /><i className="portrait-line two" /><i className="portrait-line three" /></div><div><p className="profile-name">Alsa Nudin <span className="verified" aria-label="Verified">✓</span></p><div className="profile-links" aria-label="Contact links"><a href="mailto:alsanudinnnn@gmail.com">Email</a><a href="https://github.com/alsanudinnnn-cmd/" target="_blank" rel="noreferrer">GitHub</a></div></div></div>
+        <div className="hero-copy"><p className="hero-kicker">IT professional · Johor, Malaysia</p><h1>Full-Stack Developer <span>— building practical digital experiences</span></h1><p className="hero-description">I turn ideas into reliable web products, technical systems and connected experiences. My background spans software development, IT support, database management and IoT—with a practical focus on solutions people can use confidently.</p><div className="hero-actions"><a className="button button-dark" href="/pdf/alsa-resume.pdf" download>Download resume <span aria-hidden="true">↓</span></a><a className="text-link" href="#projects">Explore selected work <span aria-hidden="true">→</span></a></div></div>
+        <p className="hero-index" aria-hidden="true">01 / 08</p>
       </section>
-
       <section className="section-shell content-section" id="projects">
-        <div className="section-heading"><div><span className="eyebrow">Selected work</span><h2>Projects</h2></div><p>Designing products that feel obvious to use and hard to forget.</p></div>
-        <div className="project-grid">{projects.map((project) => <article className="project-card" key={project.title}><ProjectVisual className={project.className} title={project.title} /><div className="project-meta"><span>{project.number}</span><span>{project.eyebrow}</span></div><h3>{project.title}</h3><p>{project.summary}</p><div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div></article>)}</div>
+        <div className="section-heading"><div><span className="eyebrow">Selected work</span><h2>Projects</h2></div><p>Web, IoT and security products shaped around clear workflows and real-world needs.</p></div>
+        <div className="project-grid">{projects.map((project) => <article className="project-card" key={project.title}><a href={project.href} target={project.href.startsWith("http") ? "_blank" : undefined} rel={project.href.startsWith("http") ? "noreferrer" : undefined} aria-label={`View ${project.title}`}><ProjectVisual className={project.className} title={project.title} /></a><div className="project-meta"><span>{project.number}</span><span>{project.eyebrow}</span></div><h3>{project.title}</h3><p>{project.summary}</p><div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div></article>)}</div>
       </section>
-
       <section className="section-shell content-section" id="experience">
-        <div className="section-heading"><div><span className="eyebrow">A practical path</span><h2>Experience</h2></div><p>Technical execution shaped by support, marketing and a close understanding of real users.</p></div>
+        <div className="section-heading"><div><span className="eyebrow">Industry journey</span><h2>Experience</h2></div><p>Technical problem-solving supported by engineering discipline, customer care and hands-on operations.</p></div>
         <div className="timeline" role="list">{experience.map(([date, role, company, place], index) => <article className="timeline-row" role="listitem" key={`${role}-${date}`}><span className="timeline-number">0{index + 1}</span><time>{date}</time><div><h3>{role}</h3><p>{company}</p></div><p className="place">{place}</p></article>)}</div>
       </section>
-
-      <section className="section-shell content-section split-section" id="about"><div className="split-title"><span className="eyebrow">Toolbox</span><h2>Technologies</h2><p>The stack changes. The standard stays the same: maintainable systems, fast pages and considered details.</p></div><div className="tech-cloud">{technologies.map((tech, index) => <span className={index < 3 ? "featured" : ""} key={tech}>{tech}</span>)}</div></section>
-
-      <section className="section-shell education-row"><div><span className="eyebrow">Education</span><h2>Always learning.</h2></div><div className="education-detail"><time>2022 — 2027</time><div><h3>Bachelor of Science in Information Technology</h3><p>Polytechnic University of the Philippines · San Juan Campus</p></div></div></section>
-
-      <section className="section-shell content-section certifications"><div className="section-heading"><div><span className="eyebrow">Continued learning</span><h2>Certifications</h2></div><p>Keeping pace with the fields changing how we design, build and work.</p></div><div className="certificate-list">{certifications.map(([date, title, issuer], index) => <article key={title}><time>{date}</time><span className={`certificate-mark mark-${index + 1}`} aria-hidden="true">RBL</span><div><h3>{title}</h3><p>{issuer}</p></div><span className="certificate-arrow" aria-hidden="true">↗</span></article>)}</div></section>
-
-      <section className="section-shell content-section outside"><div className="outside-copy"><span className="eyebrow">Outside the IDE</span><h2>Curious by default.</h2><p>When I step away from the tech world, I recharge through manga, quiet cafés, long city walks and time with animals. The best product ideas tend to arrive somewhere in between.</p></div><div className="outside-art" aria-hidden="true"><span className="art-label">OFFLINE / ONLINE</span><div className="art-circle" /><div className="art-type">R</div></div></section>
-
-      <section className="section-shell contribution-section" aria-labelledby="contribution-title"><div className="contribution-copy"><span className="eyebrow">The practice</span><h2 id="contribution-title">Repetition until it becomes technique.</h2></div><div className="contribution-grid" role="img" aria-label="A year of consistent development activity">{contributionCells.map((level, index) => <span className={`level-${level}`} key={index} />)}</div></section>
-
-      <section className="section-shell contact-section content-section" id="contact"><div className="contact-copy"><span className="eyebrow">Have a project in mind?</span><h2>Let&apos;s work together.</h2><p>Available for freelance web development, WordPress, Laravel and full-stack builds. I also support existing sites with SEO, Search Console and ongoing improvements.</p></div><div className="contact-options"><a href="mailto:rblenon18@gmail.com"><span className="contact-icon" aria-hidden="true">@</span><span><small>Email</small><strong>rblenon18@gmail.com</strong></span><i aria-hidden="true">→</i></a><button type="button" onClick={() => setChatOpen(true)}><span className="contact-icon" aria-hidden="true">+</span><span><small>Let&apos;s talk</small><strong>Tell me about your project</strong></span><i aria-hidden="true">→</i></button></div></section>
+      <section className="section-shell content-section split-section" id="about"><div className="split-title"><span className="eyebrow">Toolbox</span><h2>Technologies</h2><p>The tools span development, infrastructure, design and connected hardware. The goal stays constant: dependable work with a clear purpose.</p></div><div className="tech-cloud">{technologies.map((tech, index) => <span className={index < 4 ? "featured" : ""} key={tech}>{tech}</span>)}</div></section>
+      <section className="section-shell education-row"><div><span className="eyebrow">Education</span><h2>Built on a practical foundation.</h2></div><div><div className="education-detail"><time>Dec 2023 - Jan 2026</time><div><h3>Diploma in Information Technology (Software & Development)</h3><p>Politeknik Mersing · Johor</p></div></div><div className="education-detail"><time>Apr 2020 - Dec 2022</time><div><h3>Certificate in Information Technology</h3><p>Kolej Komuniti Cawangan Gelang Patah · Johor</p></div></div></div></section>
+      <section className="section-shell content-section certifications" id="achievements"><div className="section-heading"><div><span className="eyebrow">Recognition & leadership</span><h2>Achievements</h2></div><p>Competition results and leadership responsibilities that reflect initiative, teamwork and consistent delivery.</p></div><div className="certificate-list">{achievements.map(([date, title, issuer], index) => <article key={title}><time>{date}</time><span className={`certificate-mark mark-${(index % 2) + 1}`} aria-hidden="true">AZ</span><div><h3>{title}</h3><p>{issuer}</p></div><span className="certificate-arrow" aria-hidden="true">↗</span></article>)}</div></section>
+      <section className="section-shell content-section certifications"><div className="section-heading"><div><span className="eyebrow">Verified documents</span><h2>Credentials</h2></div><p>Professional and academic documents available for review.</p></div><div className="certificate-list">{credentials.map(([date, title, issuer, href], index) => <article key={title}><time>{date}</time><span className={`certificate-mark mark-${(index % 2) + 1}`} aria-hidden="true">AZ</span><div><h3>{title}</h3><p>{issuer}</p></div><a className="certificate-arrow" href={href} target="_blank" rel="noreferrer" aria-label={`Open ${title}`}>↗</a></article>)}</div></section>
+      <section className="section-shell content-section outside"><div className="outside-copy"><span className="eyebrow">How I work</span><h2>Curious, practical and always learning.</h2><p>I enjoy moving between code, hardware and user experience—understanding the real problem first, then choosing the right tools. I use AI as a professional tool to accelerate good thinking, never as a replacement for it.</p></div><div className="outside-art" aria-hidden="true"><span className="art-label">IDEAS / SYSTEMS / PEOPLE</span><div className="art-circle" /><div className="art-type">A</div></div></section>
+      <section className="section-shell contribution-section" aria-labelledby="contribution-title"><div className="contribution-copy"><span className="eyebrow">The practice</span><h2 id="contribution-title">Learning through every build.</h2></div><div className="contribution-grid" role="img" aria-label="A pattern representing consistent technical learning and project work">{contributionCells.map((level, index) => <span className={`level-${level}`} key={index} />)}</div></section>
+      <section className="section-shell contact-section content-section" id="contact"><div className="contact-copy"><span className="eyebrow">Have a project in mind?</span><h2>Let&apos;s build something useful.</h2><p>I&apos;m open to web development, IT support, IoT and software projects where thoughtful execution can make a real difference.</p></div><div className="contact-options"><a href="mailto:alsanudinnnn@gmail.com"><span className="contact-icon" aria-hidden="true">@</span><span><small>Email</small><strong>alsanudinnnn@gmail.com</strong></span><i aria-hidden="true">→</i></a><button type="button" onClick={() => setChatOpen(true)}><span className="contact-icon" aria-hidden="true">+</span><span><small>Let&apos;s talk</small><strong>Tell me about your project</strong></span><i aria-hidden="true">→</i></button></div></section>
     </main>
-    <footer className="site-footer section-shell"><p><span>Renielyn Lenon</span> · Still sharpening · San Juan City, PH</p><p>Designed & built with care <span>© 2026</span></p></footer>
+    <footer className="site-footer section-shell"><p><span>Muhamad Alsanudin</span> · Building and learning · Johor, Malaysia</p><p>Designed & built with care <span>© 2026</span></p></footer>
     <a className="scroll-top" href="#top" aria-label="Back to top">↑</a>
     {chatOpen && <ChatPanel onClose={() => setChatOpen(false)} />}
-    <button className="chat-trigger" type="button" onClick={() => setChatOpen((value) => !value)} aria-expanded={chatOpen}><span className="chat-dot" aria-hidden="true" /> Chat with Ren</button>
+    <button className="chat-trigger" type="button" onClick={() => setChatOpen((value) => !value)} aria-expanded={chatOpen}><span className="chat-dot" aria-hidden="true" /> Chat with Alsa</button>
   </>;
 }
