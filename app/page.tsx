@@ -3,10 +3,10 @@
 import { FormEvent, useEffect, useState } from "react";
 
 const projects = [
-  { number: "01", title: "Ebik Device Repair", summary: "A responsive service website that helps students request laptop and phone repairs through a clear, approachable booking experience.", tags: ["Responsive Web", "Service UX", "Deployment"], className: "cream", eyebrow: "Service platform / Live", href: "https://ebik.vercel.app/" },
-  { number: "02", title: "SmartWarm", summary: "An IoT-based warm-up game system combining interactive LED challenges with a simple interface for engaging group activities.", tags: ["IoT", "Arduino", "Interactive UI"], className: "keepr", eyebrow: "Final year project / Live", href: "https://smartwarm.site/" },
-  { number: "03", title: "Piex Jury Platform", summary: "A jury management platform designed around participant flow, efficient scoring workflows and transparent results for live events.", tags: ["PHP", "SQL", "Scoring UX"], className: "paws", eyebrow: "Event platform / Live", href: "https://spexpmj.infinityfreeapp.com/index.php" },
-  { number: "04", title: "IDS + IPS Monitor", summary: "A network-security dashboard in development for real-time intrusion visibility, alert triage and coordinated threat response.", tags: ["Cybersecurity", "Monitoring", "In progress"], className: "fieldops", eyebrow: "Security system / In progress", href: "#contact" },
+  { number: "01", title: "Ebik Device Repair", summary: "A responsive service website that helps students request laptop and phone repairs through a clear, approachable booking experience.", tags: ["Responsive Web", "Service UX", "Deployment"], className: "cream", eyebrow: "Service platform / Live", href: "https://ebik.vercel.app/", videoSrc: "/vid/ebik-demo.mp4" },
+  { number: "02", title: "SmartWarm", summary: "An IoT-based warm-up game system combining interactive LED challenges with a simple interface for engaging group activities.", tags: ["IoT", "Arduino", "Interactive UI"], className: "keepr", eyebrow: "Final year project / Live", href: "https://smartwarm.site/", videoSrc: "/vid/smartwarm-demo.mp4" },
+  { number: "03", title: "Piex Jury Platform", summary: "A jury management platform designed around participant flow, efficient scoring workflows and transparent results for live events.", tags: ["PHP", "SQL", "Scoring UX"], className: "paws", eyebrow: "Event platform / Live", href: "https://spexpmj.infinityfreeapp.com/index.php", videoSrc: "/vid/piex-jury-demo.mp4" },
+  { number: "04", title: "IDS + IPS Monitor", summary: "A network-security dashboard in development for real-time intrusion visibility, alert triage and coordinated threat response.", tags: ["Cybersecurity", "Monitoring", "In progress"], className: "fieldops", eyebrow: "Security system / In progress", href: "#contact", videoSrc: "/vid/venture-demo.mp4" },
   { number: "05", title: "Donexa", summary: "A streamer-donation concept that lets supporters attach videos or images to create more memorable, interactive livestream moments.", tags: ["Product Design", "Media", "In progress"], className: "cream", eyebrow: "Creator platform / In progress", href: "#contact" },
 ];
 
@@ -52,9 +52,11 @@ function ThemeButton() {
   return <button className="icon-button theme-button" type="button" onClick={toggleTheme} aria-label={`Switch to ${dark ? "light" : "dark"} mode`}><span className="theme-icon" aria-hidden="true" /></button>;
 }
 
-function ProjectVisual({ className, title }: { className: string; title: string }) {
+function ProjectVisual({ className, title, videoSrc }: { className: string; title: string; videoSrc?: string }) {
   return <div className={`project-visual ${className}`} role="img" aria-label={`${title} interface preview`}>
-    <div className="mock-browser"><div className="mock-top"><span /><span /><span /><i /></div><div className="mock-body"><div className="mock-kicker" /><div className="mock-title" /><div className="mock-copy" /><div className="mock-button" /></div></div>
+    {videoSrc
+      ? <video className="project-demo-video" src={videoSrc} autoPlay muted loop playsInline preload="metadata" aria-hidden="true" />
+      : <div className="mock-browser"><div className="mock-top"><span /><span /><span /><i /></div><div className="mock-body"><div className="mock-kicker" /><div className="mock-title" /><div className="mock-copy" /><div className="mock-button" /></div></div>}
     <span className="visual-label">{title}</span>
   </div>;
 }
@@ -98,7 +100,7 @@ export default function Home() {
       </section>
       <section className="section-shell content-section" id="projects">
         <div className="section-heading"><div><span className="eyebrow">Selected work</span><h2>Projects</h2></div><p>Web, IoT and security products shaped around clear workflows and real-world needs.</p></div>
-        <div className="project-grid">{projects.map((project) => <article className="project-card" key={project.title}><a href={project.href} target={project.href.startsWith("http") ? "_blank" : undefined} rel={project.href.startsWith("http") ? "noreferrer" : undefined} aria-label={`View ${project.title}`}><ProjectVisual className={project.className} title={project.title} /></a><div className="project-meta"><span>{project.number}</span><span>{project.eyebrow}</span></div><h3>{project.title}</h3><p>{project.summary}</p><div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div></article>)}</div>
+        <div className="project-grid">{projects.map((project) => <article className="project-card" key={project.title}><a href={project.href} target={project.href.startsWith("http") ? "_blank" : undefined} rel={project.href.startsWith("http") ? "noreferrer" : undefined} aria-label={`View ${project.title}`}><ProjectVisual className={project.className} title={project.title} videoSrc={project.videoSrc} /></a><div className="project-meta"><span>{project.number}</span><span>{project.eyebrow}</span></div><h3>{project.title}</h3><p>{project.summary}</p><div className="tag-row">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div></article>)}</div>
       </section>
       <section className="section-shell content-section" id="experience">
         <div className="section-heading"><div><span className="eyebrow">Industry journey</span><h2>Experience</h2></div><p>Technical problem-solving supported by engineering discipline, customer care and hands-on operations.</p></div>
