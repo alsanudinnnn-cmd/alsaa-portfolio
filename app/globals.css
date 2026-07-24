@@ -65,6 +65,7 @@ button, input, textarea { font: inherit; } button, a { touch-action: manipulatio
 .project-visual.keepr::before { background: repeating-radial-gradient(circle at center, #1e201f 0 12px, #111211 13px 26px); }
 .project-visual.paws::before { background: linear-gradient(160deg, #7fe0e8 0 42%, #d7f2c6 43% 65%, #68a953 66%); }
 .project-visual.fieldops::before { background: linear-gradient(110deg, #245eac 0 20%, #e9eff6 21% 100%); }
+.project-visual.fresno::before { background: linear-gradient(145deg, #d9f1ed 0 48%, #7fbdb4 49% 72%, #178b7e 73%); }
 .project-demo-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .mock-browser { width: 78%; height: 68%; background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 5px; box-shadow: 0 24px 40px rgba(0,0,0,.15); overflow: hidden; transform: translateY(4px); transition: transform 260ms ease, box-shadow 260ms ease; }
 .project-card:hover .mock-browser { transform: translateY(-4px); box-shadow: 0 32px 48px rgba(0,0,0,.19); } .keepr .mock-browser { background: #111; border-color: #333; }

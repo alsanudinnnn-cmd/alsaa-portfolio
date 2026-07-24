@@ -8,6 +8,7 @@ const projects = [
   { number: "03", title: "Piex Jury Platform", summary: "A jury management platform designed around participant flow, efficient scoring workflows and transparent results for live events.", tags: ["PHP", "SQL", "Scoring UX"], className: "paws", eyebrow: "Event platform / Live", href: "https://spexpmj.infinityfreeapp.com/index.php", videoSrc: "/vid/piex-jury-demo.mp4" },
   { number: "04", title: "Venture Data Insight", summary: "A Data Insight for industry that need a document management flow and management files in one system", tags: ["Management", "Monitoring", "In progress"], className: "fieldops", eyebrow: "Security system / In progress", href: "#contact", videoSrc: "/vid/venture-demo.mp4" },
   { number: "05", title: "CashApp Ai", summary: "A smart financial management platform for small businesses, built around receipt scanning, budget tracking, cash-flow insights and transparent business performance.", tags: ["React", "Cloudflare", "Gemini AI"], className: "smartcash", eyebrow: "Financial platform / Business",  href: "https://cshappai.site/", videoSrc: "/vid/cashapp.mp4" },
+  { number: "06", title: "Fresno Haven", summary: "A welcoming cleaning service website that presents professional home and business cleaning solutions through a clear, trustworthy and easy-to-navigate experience.", tags: ["Service Website", "Responsive Web", "Customer Experience"], className: "fresno", eyebrow: "Cleaning service / Live", href: "https://fresno-haven.vercel.app/", videoSrc: "/vid/fresno-haven-demo.mp4" },
 ];
 
 const practiceMedia = [
