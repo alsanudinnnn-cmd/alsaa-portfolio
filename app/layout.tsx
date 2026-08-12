@@ -11,6 +11,10 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Alsa Nudin - Full-Stack Developer & IT Professional",
     description: "Portfolio of Alsa Nudin, a full-stack developer and IT professional creating practical web, IoT and software solutions in Johor, Malaysia.",
+    icons: {
+      icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+      shortcut: "/icon.svg",
+    },
     openGraph: {
       title: "Alsa Nudin - Full-Stack Developer & IT Professional",
       description: "Selected projects, experience, achievements and contact details for Alsa Nudin.",
