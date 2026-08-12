@@ -9,6 +9,7 @@ const projects = [
   { number: "04", title: "Venture Data Insight", summary: "A Data Insight for industry that need a document management flow and management files in one system", tags: ["Management", "Monitoring", "In progress"], className: "fieldops", eyebrow: "Security system / In progress", href: "#contact", videoSrc: "/vid/venture-demo.mp4" },
   { number: "05", title: "CashApp Ai", summary: "A smart financial management platform for small businesses, built around receipt scanning, budget tracking, cash-flow insights and transparent business performance.", tags: ["React", "Cloudflare", "Gemini AI"], className: "smartcash", eyebrow: "Financial platform / Business",  href: "https://cshappai.site/", videoSrc: "/vid/cashapp.mp4" },
   { number: "06", title: "Fresno Haven", summary: "A welcoming cleaning service website that presents professional home and business cleaning solutions through a clear, trustworthy and easy-to-navigate experience.", tags: ["Service Website", "Responsive Web", "Customer Experience"], className: "fresno", eyebrow: "Cleaning service / Live", href: "https://fresno-haven.vercel.app/", videoSrc: "/vid/fresno-haven-demo.mp4" },
+  { number: "07", title: "Smart BioBin", summary: "An IoT-powered smart bin prototype that combines connected sensors and automated monitoring to support cleaner, more efficient waste management.", tags: ["IoT", "Sensors", "Automation"], className: "biobin", eyebrow: "IoT system / Prototype", href: "#contact", videoSrc: "/vid/smart-biobin-demo.mp4" },
 ];
 
 const practiceMedia = [
