@@ -10,6 +10,12 @@ const projects = [
   { number: "05", title: "CashApp Ai", summary: "A smart financial management platform for small businesses, built around receipt scanning, budget tracking, cash-flow insights and transparent business performance.", tags: ["React", "Cloudflare", "Gemini AI"], className: "smartcash", eyebrow: "Financial platform / Business",  href: "https://cshappai.site/", videoSrc: "/vid/cashapp.mp4" },
   { number: "06", title: "Fresno Haven", summary: "A welcoming cleaning service website that presents professional home and business cleaning solutions through a clear, trustworthy and easy-to-navigate experience.", tags: ["Service Website", "Responsive Web", "Customer Experience"], className: "fresno", eyebrow: "Cleaning service / Live", href: "https://fresno-haven.vercel.app/", videoSrc: "/vid/fresno-haven-demo.mp4" },
   { number: "07", title: "Smart BioBin", summary: "An IoT-powered smart bin prototype that combines connected sensors and automated monitoring to support cleaner, more efficient waste management.", tags: ["IoT", "Sensors", "Automation"], className: "biobin", eyebrow: "IoT system / Prototype", href: "#contact", videoSrc: "/vid/smart-biobin-demo.mp4" },
+  { number: "08", title: "SPK Usahawan", summary: "A web-based entrepreneur management system designed to streamline business information management, support entrepreneurial activities, and improve administrative efficiency.", tags: ["Web System", "Database", "Management"], className: "spk-usahawan", eyebrow: "Web system / Management", href: "https://spkusahawan.com/", videoSrc: "/vid/spkusahawan.mp4" },
+  { number: "09", title: "SmartRent Hub", summary: "A web-based rental management platform designed to streamline property listings, tenant management, rental tracking, and administrative operations.", tags: ["Web System", "Property Management", "Database"], className: "smartrent", eyebrow: "Web system / Rental Management", href: "https://smartrenthub44.com/", videoSrc: "/vid/smartrenthub.mp4" },
+  { number: "10", title: "AquaFlow", summary: "An IoT-based smart water monitoring system designed to track water consumption, detect potential leaks, and provide real-time alerts to help users manage water usage efficiently.", tags: ["IoT", "Water Monitoring", "Leak Detection"], className: "aquaflow", eyebrow: "IoT system / Water Management", href: "https://aquaflow.site.je/", videoSrc: "/vid/aquaflow.mp4" },
+  { number: "11", title: "Politeknik JTMK Navigator System", summary: "A web-based campus navigation system designed to help students, staff, and visitors locate classrooms, laboratories, offices, and other facilities within the JTMK department.", tags: ["Mobile Apps", "Web System", "Campus Guide"], className: "jtmk-navigator", eyebrow: "Web system / Campus Navigation", href: "#contact", videoSrc: "/vid/jtmknav.mp4" },
+  { number: "12", title: "BOM Excel Translator", summary: "A web-based tool designed to translate and standardize Bill of Materials (BOM) Excel files, simplifying data conversion and improving compatibility between different formats and systems.", tags: ["Excel Automation", "Data Processing", "Web System"], className: "bom-translator", eyebrow: "Web system / Excel Automation", href: "#contact", videoSrc: "/vid/bomexcel.mp4" },
+  { number: "13", title: "Venture Assets Management", summary: "A web-based asset management system designed to streamline asset tracking, maintenance records, inventory monitoring, and equipment management for improved operational efficiency.", tags: ["Asset Management", "Inventory System", "Web System"], className: "venture-assets", eyebrow: "Web system / Asset Management", href: "#contact", videoSrc: "/vid/ventureasset.mp4" },
 ];
 
 const practiceMedia = [
@@ -19,9 +25,10 @@ const practiceMedia = [
 ] as const;
 
 const experience = [
+  ["June 2026 - Currently", "Software Developer Internship", "Venture", "Johor Bahru"],
   ["Jan 2026 - Currently", "Software Developer", "Freelance", "Johor Bahru"],
   ["Jan 2024 - Jan 2026", "IT Technician", "AJ Technology", "Johor Bahru"],
-  ["Apr 2022 - Mar 2023", "Junior Engineer", "Kyocera", "Johor Bahru"],
+  ["Apr 2022 - Mar 2023", "Assistant Engineer", "Kyocera", "Johor Bahru"],
   ["May 2021 - Apr 2022", "Store Management Trainee", "Original Classic", "Johor Bahru"],
 ];
 
