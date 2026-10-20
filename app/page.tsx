@@ -50,6 +50,17 @@ const credentials: [string, string, string, string, CertificateIconName][] = [
   ["Credential", "CompTIA Data+", "Verified professional certification", "/pdf/comptia-data-plus.pdf", "certificate"],
   ["Academic", "Academic Transcript", "Official academic record and course results", "/pdf/academic-transcript.pdf", "graduation"],
   ["Profile", "Professional Resume", "Experience, education, skills and achievements", "/pdf/alsa-resume.pdf", "document"],
+  ["AI learning", "AI Safety", "Certificate in responsible and safe artificial intelligence practice", "/pdf/ai-safety.pdf", "certificate"],
+  ["AI learning", "AI Nation 2030", "Certificate focused on the future of artificial intelligence and digital innovation", "/pdf/ai-nation-2030.pdf", "code"],
+  ["AI learning", "Agentic AI for All", "Certificate in agentic AI concepts and practical applications", "/pdf/agentic-ai-for-all.pdf", "code"],
+  ["Robotics", "Collaborative Robot (Cobot)", "Collaborative robotics project documentation and participation certificate", "/pdf/collaborative-robot-cobot.pdf", "users"],
+  ["Robotics", "Collaborative Robot Team", "Team project certificate for collaborative robot development", "/pdf/collaborative-robot-cobot-team.pdf", "users"],
+];
+
+const gallery = [
+  ["hackathon-2025.jpg", "Data Hackathon POLYCC v2.0", "Representing Politeknik Mersing at the ASEAN challenge."],
+  ["spex-project-exhibition.jpg", "SPEX'16 Project Exhibition", "Grand award recognition for a student project."],
+  ["polycskills-cobot-2026.jpg", "POLYCC Skills Cobot 2026", "Collaborative robotics competition and technical teamwork."],
 ];
 
 function CertificateIcon({ name }: { name: CertificateIconName }) {
@@ -139,7 +150,7 @@ export default function Home() {
     <a className="skip-link" href="#main">Skip to content</a>
     <header className="site-header">
       <a className="brand" href="#top" aria-label="Alsa home">ALSA<span>.</span></a>
-      <nav aria-label="Primary navigation"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+      <nav aria-label="Primary navigation"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></nav>
       <ThemeButton />
     </header>
     <main id="main">
@@ -160,6 +171,7 @@ export default function Home() {
       <section className="section-shell education-row"><div><span className="eyebrow">Education</span><h2>Built on a practical foundation.</h2></div><div><div className="education-detail"><time>Dec 2023 - Jan 2026</time><div><h3>Diploma in Information Technology (Software & Development)</h3><p>Politeknik Mersing · Johor</p></div></div><div className="education-detail"><time>Apr 2020 - Dec 2022</time><div><h3>Certificate in Information Technology</h3><p>Kolej Komuniti Cawangan Gelang Patah · Johor</p></div></div></div></section>
       <section className="section-shell content-section certifications" id="achievements"><div className="section-heading"><div><span className="eyebrow">Recognition & leadership</span><h2>Achievements</h2></div><p>Competition results and leadership responsibilities that reflect initiative, teamwork and consistent delivery.</p></div><div className="certificate-list">{achievements.map(([date, title, issuer, icon], index) => <article key={title}><time>{date}</time><span className={`certificate-mark mark-${(index % 2) + 1}`} aria-hidden="true"><CertificateIcon name={icon} /></span><div><h3>{title}</h3><p>{issuer}</p></div><span className="certificate-arrow" aria-hidden="true">↗</span></article>)}</div></section>
       <section className="section-shell content-section certifications"><div className="section-heading"><div><span className="eyebrow">Verified documents</span><h2>Credentials</h2></div><p>Professional and academic documents available for review.</p></div><div className="certificate-list">{credentials.map(([date, title, issuer, href, icon], index) => <article key={title}><time>{date}</time><span className={`certificate-mark mark-${(index % 2) + 1}`} aria-hidden="true"><CertificateIcon name={icon} /></span><div><h3>{title}</h3><p>{issuer}</p></div><a className="certificate-arrow" href={href} target="_blank" rel="noreferrer" aria-label={`Open ${title}`}>↗</a></article>)}</div></section>
+      <section className="section-shell content-section gallery-section" id="gallery" aria-labelledby="gallery-title"><div className="section-heading"><div><span className="eyebrow">Beyond the screen</span><h2 id="gallery-title">Gallery</h2></div><p>A few moments from competitions, exhibitions and collaborative technical work.</p></div><div className="gallery-grid">{gallery.map(([src, title, caption]) => <figure key={src} className="gallery-card"><img src={`/gallery/${src}`} alt={title} loading="lazy" /><figcaption><strong>{title}</strong><span>{caption}</span></figcaption></figure>)}</div></section>
       <section className="section-shell content-section outside"><div className="outside-copy"><span className="eyebrow">How I work</span><h2>Curious, practical and always learning.</h2><p>I enjoy moving between code, hardware and user experience—understanding the real problem first, then choosing the right tools. I use AI as a professional tool to accelerate good thinking, never as a replacement for it.</p></div><div className="outside-art"><img src="/images/how-i-work-github.png" alt="Alsa's GitHub profile showing pinned web, IoT, AI and data projects" width="1495" height="802" loading="lazy" /></div></section>
       <section className="section-shell contribution-section" aria-labelledby="contribution-title"><div className="contribution-copy"><span className="eyebrow">The practice</span><h2 id="contribution-title">Learning through every build.</h2></div><PracticeSlideshow /></section>
       <section className="section-shell contact-section content-section" id="contact"><div className="contact-copy"><span className="eyebrow">Have a project in mind?</span><h2>Let&apos;s build something useful.</h2><p>I&apos;m open to web development, IT support, IoT and software projects where thoughtful execution can make a real difference.</p></div><div className="contact-options"><a href="mailto:alsanudinnnn@gmail.com"><span className="contact-icon" aria-hidden="true">@</span><span><small>Email</small><strong>alsanudinnnn@gmail.com</strong></span><i aria-hidden="true">→</i></a><button type="button" onClick={() => setChatOpen(true)}><span className="contact-icon" aria-hidden="true">+</span><span><small>Let&apos;s talk</small><strong>Tell me about your project</strong></span><i aria-hidden="true">→</i></button></div></section>
